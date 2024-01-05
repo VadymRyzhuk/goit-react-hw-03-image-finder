@@ -1,15 +1,25 @@
-import React, { Component } from 'react';
+// const ImageGalleryItem = ({ image, openModal }) => {
+//   return (
+//     <li onClick={openModal}>
+//       <img src={image.webformatURL} alt={image.tags} width={200} height={150} />
+//     </li>
+//   );
+// };
 
-class ImageGalleryItem extends Component {
-  render() {
-    return (
-      <div>
-        <li className="gallery-item">
-          <img src="" alt="" width={100} height={100} />
-        </li>
-      </div>
-    );
-  }
-}
+// export { ImageGalleryItem };
+
+import React from 'react';
+
+const ImageGalleryItem = ({ image, openModal }) => {
+  const handleItemClick = () => {
+    openModal(image.id);
+  };
+
+  return (
+    <li onClick={handleItemClick}>
+      <img src={image.webformatURL} alt={image.tags} width={300} height={200} />
+    </li>
+  );
+};
 
 export { ImageGalleryItem };
